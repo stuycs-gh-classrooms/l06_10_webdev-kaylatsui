@@ -1,6 +1,6 @@
 //Kayla Tsui, NeXTCS Period 10, Due Date: 10/20/2021, Project 00 Time Variance/Clock
-int h, m, s;
-float cx, cy, theta, diameter, sradius, sradians, mradius, mradians, hradius, hradians;
+var h, m, s;
+var cx, cy, theta, diameter, sradius, sradians, mradius, mradians, hradius, hradians;
 function setup () {
   createCanvas (400, 400);
   h =  hour(); 
@@ -43,7 +43,7 @@ function draw () {
   text(9, cx - 135, cy);
 }
 
-float timeToAngle (int h, int m, int s){
+float timeToAngle (h, m, s){
   if ( h > 12) {
     h = h - 12;
   }
@@ -53,11 +53,11 @@ float timeToAngle (int h, int m, int s){
   updateTime();
   return(hradians);
 }
-function drawHand (float cx, float cy, float clockTime, float lineradius) {
+function drawHand (cx, cy, clockTime, lineradius) {
   //Uses the hradians from timeToAngle as clockTime
   line (cx, cy, cx + cos(clockTime) * lineradius, cy + sin(clockTime) * lineradius); 
 }
-function clockFace (float cx, float cy, float diameter){
+function clockFace (cx, cy, diameter){
   circle (cx, cy, diameter); 
 }
 function updateTime () {
@@ -70,9 +70,9 @@ function minTicks() {
   strokeWeight(2);
   beginShape(POINTS);
   for (int a = 0; a < 360; a+=6) {
-    float angle = radians(a);
-    float x = cx + cos(angle) * sradius;
-    float y = cy + sin(angle) * sradius;
+    var angle = radians(a);
+    var x = cx + cos(angle) * sradius;
+    var y = cy + sin(angle) * sradius;
     vertex(x, y);
   }
   endShape();
