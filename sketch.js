@@ -1,8 +1,8 @@
 //Kayla Tsui, NeXTCS Period 10, Due Date: 10/20/2021, Project 00 Time Variance/Clock
 int h, m, s;
 float cx, cy, theta, diameter, sradius, sradians, mradius, mradians, hradius, hradians;
-void setup () {
-  size (400, 400);
+function setup () {
+  createCanvas (400, 400);
   h =  hour(); 
   m = minute(); 
   s = second();
@@ -14,7 +14,7 @@ void setup () {
   hradius = (diameter / 2.0) * 0.5; 
 }
 
-void draw () {
+function draw () {
   background (0, 0, 139);
   fill(173, 216, 230);
   clockFace( cx, cy, diameter);
@@ -53,20 +53,20 @@ float timeToAngle (int h, int m, int s){
   updateTime();
   return(hradians);
 }
-void drawHand (float cx, float cy, float clockTime, float lineradius) {
+function drawHand (float cx, float cy, float clockTime, float lineradius) {
   //Uses the hradians from timeToAngle as clockTime
   line (cx, cy, cx + cos(clockTime) * lineradius, cy + sin(clockTime) * lineradius); 
 }
-void clockFace (float cx, float cy, float diameter){
+function clockFace (float cx, float cy, float diameter){
   circle (cx, cy, diameter); 
 }
-void updateTime () {
+function updateTime () {
   s = second();
   h = hour();
   m = minute(); 
 }
 //minute ticks on the clock (optional) 
-void minTicks() {
+function minTicks() {
   strokeWeight(2);
   beginShape(POINTS);
   for (int a = 0; a < 360; a+=6) {
