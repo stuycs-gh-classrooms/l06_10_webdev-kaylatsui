@@ -43,7 +43,7 @@ function draw () {
   text(9, cx - 135, cy);
 }
 
-float timeToAngle (h, m, s){
+function timeToAngle (h, m, s){
   if ( h > 12) {
     h = h - 12;
   }
