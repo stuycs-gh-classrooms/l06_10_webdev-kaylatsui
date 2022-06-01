@@ -69,7 +69,7 @@ function updateTime () {
 function minTicks() {
   strokeWeight(2);
   beginShape(POINTS);
-  for (int a = 0; a < 360; a+=6) {
+  for (a = 0; a < 360; a+=6) {
     var angle = radians(a);
     var x = cx + cos(angle) * sradius;
     var y = cy + sin(angle) * sradius;
